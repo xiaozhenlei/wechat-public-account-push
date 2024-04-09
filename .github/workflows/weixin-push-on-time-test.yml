@@ -3,8 +3,8 @@
 
 name: weixin-push-on-time-params-log
 
-on:
-  workflow_dispatch:
+于:
+  工作流程调度:
     
 jobs:
   build:
@@ -13,18 +13,18 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     # 添加定时任务指定运行分支 默认为master
     - uses: actions/checkout@v3
-      with:
+      包含:
           ref: 'feature/develop'
           
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
-      with:
+      包含:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
